@@ -19,7 +19,7 @@ class Product(models.Model):
     premature = models.CharField(max_length=6, choices=PREMATURE_CHOICES, default='26-30')
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     height = models.DecimalField(max_digits=5, decimal_places=2)
-    submission_date = models.DateTime   Field(default=timezone.now().date())
+    submission_date = models.DateTimeField(default=timezone.now().date())
 
 class BreastfeedingDetail(models.Model):
     parentName = models.CharField(max_length=100, default="unknown")
