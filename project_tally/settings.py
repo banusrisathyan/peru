@@ -90,7 +90,8 @@ DATABASES ={
 }
 
 
-CORS_ORIGIN_WHITELIST= ['http://localhost:3000']
+CORS_ORIGIN_WHITELIST= ['https://shishuaagaar.netlify.app/']
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
