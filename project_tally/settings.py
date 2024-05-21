@@ -29,6 +29,8 @@ SECRET_KEY = 'django-insecure-57h$zgur$9=)d8=vzl*tg#vgs(w)l)_m406%%6342b%tge2q9o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,7 +92,7 @@ DATABASES ={
 }
 
 
-CORS_ORIGIN_WHITELIST= ['https://shishuaagaar.netlify.app/']
+CORS_ALLOWED_ORIGIN= ['https://shishuaagaar.netlify.app/']
 
 
 # Password validation
