@@ -5,10 +5,6 @@ from .serializers import ProductSerializer, BreastfeedingDetailSerializer,PoopDe
 from django.shortcuts import render
 from django.http import JsonResponse
 
-
-
-
-
 class ProductView(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer

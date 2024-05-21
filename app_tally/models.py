@@ -19,7 +19,7 @@ class Product(models.Model):
     premature = models.CharField(max_length=6, choices=PREMATURE_CHOICES, default='26-30')
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     height = models.DecimalField(max_digits=5, decimal_places=2)
-    submission_date = models.DateTimeField(default=timezone.now().date())
+    submission_date = models.DateTimeField(auto_now_add=True)
 
 class BreastfeedingDetail(models.Model):
     parentName = models.CharField(max_length=100, default="unknown")
@@ -34,7 +34,7 @@ class BreastfeedingDetail(models.Model):
     nippleCracks = models.CharField(max_length=50, choices=[('இல்லை','இல்லை'),('ஆம்','ஆம்')])
     feelings = models.CharField(max_length=20, choices=[('நிம்மதியாக', 'நிம்மதியாக'), ('மகிழ்ச்சியான உணர்வு', 'Hமகிழ்ச்சியான உணர்வு'), ('சோக உணர்வு', 'சோக உணர்வு'), ('தீர்ந்து போன உணர்வு', 'தீர்ந்து போன உணர்வு'), ('கவலை உணர்வு', 'கவலை உணர்வு')])
     presentWeight = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
-    submission_date = models.DateField(default=timezone.now().date())
+    submission_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return f'Breastfeed Detail: {self.startTime} - {self.stopTime}'
@@ -58,7 +58,7 @@ class PoopDetail(models.Model):
     colour = models.CharField(max_length=50, choices=COLOUR_CHOICES)
     texture = models.CharField(max_length=50, choices=TIME_CHOICES)
 
-    submission_date = models.DateField(default=timezone.now().date())
+    submission_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return f"Poop Detail - Time: {self.time}, Colour: {self.colour}, Texture: {self.texture}"

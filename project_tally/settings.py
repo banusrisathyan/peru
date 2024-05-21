@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url 
 import os
+
 
 
 
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-57h$zgur$9=)d8=vzl*tg#vgs(w)l)_m406%%6342b%tge2q9o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'project_tally.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,12 +85,10 @@ WSGI_APPLICATION = 'project_tally.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+DATABASES ={ 
+    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
 
 CORS_ORIGIN_WHITELIST= ['http://localhost:3000']
 
