@@ -90,7 +90,7 @@ DATABASES ={
 }
 
 
-CORS_ORIGIN_WHITELIST= ['https://shishuaagaar.netlify.app']
+CORS_ORIGIN_WHITELIST= ['https://shishuaagaar.netlify.app/']
 
 
 # Password validation
