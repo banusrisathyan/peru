@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url 
 import os
 
 
@@ -87,9 +86,17 @@ WSGI_APPLICATION = 'project_tally.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES ={ 
-    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',  # Change this if your database is hosted elsewhere
+        'PORT': '5432',  # Leave empty to use the default PostgreSQL port (5432)
+    }
 }
+
 
 
 CORS_ALLOWED_ORIGIN= ['https://shishuaagaar.netlify.app/']
